@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础排序-冒泡排序</title>
+</head>
+<body>
+    <script>
+        var arr=[11,13,9,3,4,1,15,8]//目标数组
+        // 冒泡排序方法--从左往右
+        function bubblesort(arr){
+             this.arr=arr
+             for(let i=0;i<=this.arr.length;i++){
+                for(let j=0;j<=this.arr.length;j++){
+                    if(this.arr[i]>=this.arr[j]){
+                        let tmp=this.arr[i];
+                        this.arr[i]=this.arr[j];
+                        this.arr[j]=tmp;
+                    }
+                }
+                console.log(this.arr);
+             }
+             
+        }
+        // 测试
+        // var a=new bubblesort(arr)
+        // console.log(a);
+        // 冒泡排序--从右向左
+        function Rbubblesort(arr){
+            this.arr=arr;
+            for(let i=this.arr.length;i>=0;i--){
+                for(let j=this.arr.length;j>=0;j--){
+                    if(this.arr[i]>=this.arr[j]){
+                        let tmp=this.arr[i];
+                        this.arr[i]=this.arr[j];
+                        this.arr[j]=tmp;
+                    }
+                }
+                console.log(this.arr);
+            }
+        }
+        // var a=new Rbubblesort(arr)
+        // console.log(a);
+        //  优化：以上冒泡存在一个问题：每次冒泡都需要把整个数组遍历一遍，消耗时间。 
+        //        所以需要排除已经比较过度项目，这样更快
+        function finalRubblesort(){
+            this.arr=arr
+             for(let i=0;i<this.arr.length-1;i++){
+                for(let j=0;j<this.arr.length-i-1;j++){
+                    if(this.arr[j]<this.arr[j+1]){
+                        let tmp=this.arr[j];
+                        this.arr[j]=this.arr[j+1];
+                        this.arr[j+1]=tmp;
+                    }
+                }
+                console.log(this.arr);
+             }
+            
+        }
+        var a=new finalRubblesort(arr)
+        console.log(a);
+    </script>
+</body>
+</html>
