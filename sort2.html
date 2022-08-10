@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>基础排序-选择排序</title>
+</head>
+<body>
+    <script>
+        var arr1=[12,3,45,55,44,12,33,44]//测试数组
+        //  
+        function selectsort(arr){
+            let len=arr.length;
+            let minindex,temp;
+            for(let i=0;i<len-1;i++){//外层循环确定从左至右每个位置需要放置的最小（大）数据
+                minindex=i;
+                console.log(arr);//展示排序过程
+                for(let j=i+1;j<len;j++){//内存循环寻找最小（最大）数据
+                    if(arr[j]<arr[minindex]){
+                        minindex=j;
+                    }
+                }
+                temp=arr[i];
+                arr[i]=arr[minindex];
+                arr[minindex]=temp;
+            }
+            return arr;
+        }
+        console.log(selectsort(arr1));
+    </script>
+</body>
+</html>
