@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>插入排序</title>
+</head>
+<body>
+     <script>
+        var arr1=[12,32,12,5,1,4,6,11]//测试数组
+        // 插入排序依旧采取双循环
+        // 外层循环放置目标数据
+        // 内层循环确定需要放置的目标数据（最大或者最小的数据）
+        function insertsort(arr){
+           for(i=1;i<arr.length;i++){
+            let temp=arr[i]; 
+            let j=i-1;
+            console.log(arr);//排序过程
+            while(j>=0&&arr[j]>temp){
+                arr[j+1]=arr[j];
+                j--
+            }
+            arr[j+1]=temp;                              
+           }
+           return arr;
+        }
+        // 测试
+        console.log(insertsort(arr1));
+     </script>
+</body>
+</html>
